@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品一覧</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background-color: #f9f9fb;
+            color: #333;
+            line-height: 1.9;
+            padding: 3rem 1.5rem;
+            max-width: 850px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 2.4rem;
+            color: #4E4FEB;
+            border-bottom: 3px solid #4E4FEB;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td div {
+            font-size: 0.8em;
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>製品情報</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>製品名</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- JavaScriptでデータを挿入 -->
+        </tbody>
+    </table>
+    <script>
+        const data = `製品名,メーカー,url
+カーミパック 生理食塩液,SBカワスミ,https://www.sb-kawasumi.jp/medical/product/detail.html?pdid=14
+テルモ生食,テルモ,https://medical.terumo.co.jp/medicine/dr42
+テルモ生食TK,テルモ,https://medical.terumo.co.jp/medicine/dr43
+大塚生食注,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000224.php
+大塚生食注2ポート50mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000225.php
+大塚生食注TN,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000227.php
+生理食塩液PL「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33613/
+生理食塩液「AY」,エイワイファーマ（陽進堂）,https://www.yoshindo.jp/db/search/detail/?prod_id=719
+生理食塩液「NP」,ニプロ,https://med.nipro.co.jp/ph_product_detail?id=a0A1000000zzS2BEAU
+生理食塩液「VTRS」,ヴィアトリス・ヘルスケア（旧・Mylan）,https://www.viatris-e-channel.com/viatris-products/di/detail/4987114134608.html
+生理食塩液「ヒカリ」,光製薬（ネオクリティケア製薬）,https://www.hikari-pharm.co.jp/hikari/archives/product/8155
+生理食塩液バッグ「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33614/
+生食注キット「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33611/
+生食溶解液キットH,ニプロ,https://med.nipro.co.jp/ph_product_detail?id=a0A10000007eRNlEAM
+リンゲル液「オーツカ」,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000304.php
+リンゲル液「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33713/
+ソルラクトD輸液,テルモ,https://medical.terumo.co.jp/medicine/dr35
+ソルラクトS輸液,テルモ,https://medical.terumo.co.jp/medicine/dr36
+ソルラクトTMR輸液,テルモ,https://medical.terumo.co.jp/medicine/dr37
+ソルラクト輸液,テルモ,https://medical.terumo.co.jp/medicine/dr34
+ニソリM注,ヴィアトリス・ヘルスケア（ヴィアトリス製薬）,https://www.viatris-e-channel.com/viatris-products/di/detail/4987114042606.html
+ニソリ・S注,ヴィアトリス・ヘルスケア（ヴィアトリス製薬）,https://www.viatris-e-channel.com/viatris-products/di/detail/4987114042309.html
+ニソリ輸液,ヴィアトリス・ヘルスケア（ヴィアトリス製薬）,https://www.viatris-e-channel.com/viatris-products/di/detail/4987114042903.html
+ハルトマンD液「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33846/
+ハルトマン液「コバヤシ」,ネオクリティケア製薬,https://neocriticare.com/seihin-info/info/hartkoba.html
+ハルトマン輸液pH8「NP」,ニプロ,https://med.nipro.co.jp/ph_product_detail?id=a0A10000013DTAlEAO
+ハルトマン輸液「NP」,ニプロ,https://med.nipro.co.jp/ph_product_detail?id=a0A1000000zzSe7EAE
+ポタコールR輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000288.php
+ラクテックD輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000299.php
+ラクテックG輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000300.php
+ラクテック注,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000298.php
+ラクトリンゲルM注「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33705/
+ラクトリンゲルS注「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33706/
+"ラクトリンゲル液""フソー""",扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33707/
+アクメインD輸液,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/13772
+ソリューゲンF注,ネオクリティケア製薬（ニプロ・光製薬）,https://neocriticare.com/seihin-info/info/solyuf.html
+ソリューゲンG注,ネオクリティケア製薬,https://neocriticare.com/seihin-info/info/solyug_200ml-solyug_300ml-solyug_500ml.html
+ソルアセトD輸液,テルモ,https://medical.terumo.co.jp/medicine/dr24
+ソルアセトF輸液,テルモ,https://medical.terumo.co.jp/medicine/dr25
+フィジオ140輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000275.php
+ペロール注,ヴィアトリス・ヘルスケア（ヴィアトリス製薬）,https://www.viatris-e-channel.com/viatris-products/di/detail/4987114020000.html
+リナセートD輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=741
+リナセートF輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=740
+ヴィーンD輸液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33802/
+ヴィーンF輸液,扶桑薬品工業（ニプロ）,https://www.fuso-pharm.co.jp/med/ph/products/33803/
+ビカネイト輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000272.php
+ビカーボン輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=569
+サリンヘス輸液6％,フレゼニウスカービジャパン（大塚製薬工場）,https://www.e-pharma.jp/druginfo/info/3319400A2046
+サヴィオゾール輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000255.php
+ヘスパンダー輸液,フレゼニウスカービジャパン（大塚製薬工場）,https://www.e-pharma.jp/druginfo/info/3319547A4035
+ボルベン輸液6％,フレゼニウスカービジャパン（大塚製薬工場）,https://www.fresenius-kabi.com/jp/%E8%A3%BD%E5%93%81%E6%83%85%E5%A0%B1/all-products/infusion-therapy/%E3%83%9C%E3%83%AB%E3%83%99%E3%83%B3
+低分子デキストランL注,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000264.php
+低分子デキストラン糖注,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000263.php
+KN1号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000248.php
+YDソリタ-T1号輸液,陽進堂,https://www.yoshindo.jp/db/search/detail/?prod_id=702
+ソリタ-T1号輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=705
+ソルデム1輸液,テルモ,https://medical.terumo.co.jp/medicine/dr26
+デノサリン1輸液,テルモ,https://medical.terumo.co.jp/medicine/dr38
+リプラス1号輸液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33711/
+KN2号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000249.php
+ソリタ-T2号輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=706
+ソルデム2輸液,テルモ,https://medical.terumo.co.jp/medicine/dr27
+10%EL-3号輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=535
+EL-3号輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=534
+KN3号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000250.php
+KNMG3号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000252.php
+YDソリタ-T3号G輸液,陽進堂,https://www.yoshindo.jp/db/search/detail/?prod_id=704
+YDソリタ-T3号輸液,陽進堂,https://www.yoshindo.jp/db/search/detail/?prod_id=703
+アクチット輸液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33801/
+アクマルト輸液,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/7946
+アステマリン3号MG輸液,ヴィアトリス・ヘルスケア（ヴィアトリス製薬）,https://www.viatris-e-channel.com/viatris-products/di/detail/4987114037404.html
+アセテート維持液3G「HK」,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/7976
+アセトキープ3G注,ネオクリティケア製薬,https://neocriticare.com/seihin-info/info/aceto_200ml-aceto_500ml.html
+アルトフェッド注射液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33543/
+エスロンB注,ネオクリティケア製薬,https://neocriticare.com/seihin-info/info/esron_200ml_esron_500ml.html
+クリニザルツ輸液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33843/
+グルアセト35注,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33844/
+ソリタ-T3号G輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=708
+ソリタ-T3号輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=707
+ソリタックス-H輸液,エイワイファーマ（陽進堂）,http://www.yoshindo.jp/db/search/detail/?prod_id=710
+ソルデム3AG輸液,テルモ,https://medical.terumo.co.jp/medicine/dr30
+ソルデム3A輸液,テルモ,https://medical.terumo.co.jp/medicine/dr29
+ソルデム3PG輸液,テルモ,https://medical.terumo.co.jp/medicine/dr31
+ソルデム3輸液,テルモ,https://medical.terumo.co.jp/medicine/dr28
+ソルマルト輸液,テルモ,https://medical.terumo.co.jp/medicine/dr33
+トリフリード輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000267.php
+ハルトマン-G3号輸液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33847/
+ヒシナルク3号輸液,ニプロ,https://med.nipro.co.jp/ph_product_detail?id=a0A10000007eRO1EAM
+フィジオ35輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000273.php
+フィジオゾール3号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000276.php
+フルクトラクト注,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000281.php
+ペンライブ注,ヴィアトリス・ヘルスケア（ヴィアトリス製薬）,https://www.viatris-e-channel.com/viatris-products/di/detail/4987114039200.html
+ユエキンキープ3号輸液,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/13786
+リプラス3号輸液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33712/
+ヴィーン3G輸液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33804/
+KN4号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000251.php
+ソリタ-T4号輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=709
+ソルデム6輸液,テルモ,https://medical.terumo.co.jp/medicine/dr32
+フィジオ70輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000274.php
+5%糖液キットH,ニプロ,https://med.nipro.co.jp/ph_product_detail?id=a0A10000007eRNeEAM
+キシリトール注5%「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33576/
+キシリトール注「ヒカリ」5%,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/8117
+キリット注5%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000247.php
+テルモ糖注10%,テルモ,https://medical.terumo.co.jp/medicine/dr45
+テルモ糖注5%,テルモ,https://medical.terumo.co.jp/medicine/dr44
+テルモ糖注50%,テルモ,https://medical.terumo.co.jp/medicine/dr46
+テルモ糖注TK,テルモ,https://medical.terumo.co.jp/medicine/dr47
+ブドウ糖注10%PL「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33667/
+ブドウ糖注10%バッグ「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33666/
+ブドウ糖注5%PL「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33665/
+ブドウ糖注5%「NP」,ニプロ,https://med.nipro.co.jp/ph_product_detail?id=a0A10000010bFYVEA2
+ブドウ糖注5%バッグ「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33662/
+ブドウ糖注射液5%「VTRS」,ヴィアトリス・ヘルスケア＝ヴィアトリス製薬,https://www.viatris-e-channel.com/viatris-products/di/detail/4987114135209.html
+ブドウ糖注射液「AY」5%,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=720
+マルトス輸液10%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000293.php
+マルトース輸液10%「フソー」,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33818/
+光糖液10%,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/8417
+光糖液20%,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/8422
+光糖液30%,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/8425
+光糖液5%,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/8406
+大塚糖液10%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000229.php
+大塚糖液5%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000228.php
+大塚糖液5%2ポート50mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000235.php
+大塚糖液5%TN,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000237.php
+大塚糖液50%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000232.php
+大塚糖液70%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000234.php
+小林糖液5%,ネオクリティケア製薬,https://neocriticare.com/seihin-info/info/kobatou5.html
+ツインパル輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=559
+パレセーフ輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=565
+ビーフリード輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000271.php
+プラスアミノ輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000277.php
+パレプラス輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=685
+エネフリード輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/001862.php
+ピーエヌツイン‐1号輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=566
+ピーエヌツイン‐2号輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=567
+ピーエヌツイン‐3号輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=568
+ハイカリックRF輸液,テルモ,https://medical.terumo.co.jp/medicine/dr53
+ハイカリック液‐1号,テルモ,https://medical.terumo.co.jp/medicine/dr50
+ハイカリック液‐2号,テルモ,https://medical.terumo.co.jp/medicine/dr51
+ハイカリック液‐3号,テルモ,https://medical.terumo.co.jp/medicine/dr52
+リハビックス-K1号輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=582
+リハビックス-K2号輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=583
+ネオパレン1号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000269.php
+ネオパレン2号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000270.php
+フルカリック1号輸液,テルモ＝田辺三菱製薬,https://medical.terumo.co.jp/medicine/dr56
+フルカリック2号輸液,テルモ＝田辺三菱製薬,https://medical.terumo.co.jp/medicine/dr57
+フルカリック3号輸液,テルモ＝田辺三菱製薬,https://medical.terumo.co.jp/medicine/dr58
+ミキシッドH輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000295.php
+ミキシッドL輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000294.php
+エルネオパNF1号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000213.php
+エルネオパNF2号輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000214.php
+ワンパル1号輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=768
+ワンパル2号輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=769
+KCL注20mEqキット｢テルモ｣,テルモ,https://medical.terumo.co.jp/medicine/dr19
+KCL補正液1mEq/mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000254.php
+アスパラカリウム注10mEq,ニプロ,https://med.nipro.co.jp/ph_product_detail?id=a0A5F00002GionoUAB
+アスパラギン酸Ｋ注10mEqキット,テルモ,https://medical.terumo.co.jp/medicine/dr00
+カルチコール注射液,日医工,https://www.nichiiko.co.jp/medicine/product/55160
+メイロン静注7%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000296.php
+メイロン静注8.4%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000297.php
+リン酸Na補正液0.5mmol/mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000305.php
+乳酸Na補正液1mEq/mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000268.php
+塩化Ca補正液1mEq/mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000216.php
+塩化Na補正液2.5mEq/mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000218.php
+塩化アンモニウム補正液5mEq/mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000215.php
+大塚食塩注10%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000223.php
+硫酸Mg補正液1mEq/mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000303.php
+アミゼットB輸液,テルモ,https://medical.terumo.co.jp/medicine/dr06
+アミニック輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=532
+アミパレン輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000208.php
+プロテアミン12注射液,テルモ,https://medical.terumo.co.jp/medicine/dr60
+モリアミンS注,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=579
+モリプロンF輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=580
+キドミン輸液,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000246.php
+ネオアミユー輸液,エイワイファーマ=陽進堂,http://www.yoshindo.jp/db/search/detail/?prod_id=562
+アミノレバン点滴静注,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000207.php
+テルフィス点滴静注,テルモ,https://medical.terumo.co.jp/medicine/dr39
+ヒカリレバン注,光製薬,https://www.hikari-pharm.co.jp/hikari/archives/product/8435
+モリヘパミン点滴静注,エイワイファーマ=EAファーマ,https://medical.eisai.jp/products/mhb/mhb_v
+プレアミン-P注射液,扶桑薬品工業,https://www.fuso-pharm.co.jp/med/ph/products/33671/
+イントラリポス輸液10%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000209.php
+イントラリポス輸液20%,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000210.php
+大塚蒸留水,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dikj/menu1/000222.php`;
+
+        const rows = data.split('\n').slice(1); // ヘッダーを除外
+        const tbody = document.querySelector('tbody');
+
+        rows.forEach(row => {
+            const [productName, manufacturer, url] = row.split(',');
+            const tr = document.createElement('tr');
+
+            const productCell = document.createElement('td');
+            const productLink = document.createElement('a');
+            productLink.href = url;
+            productLink.textContent = productName;
+            productCell.appendChild(productLink);
+
+            const manufacturerDiv = document.createElement('div');
+            manufacturerDiv.textContent = manufacturer;
+            productCell.appendChild(manufacturerDiv);
+
+            tr.appendChild(productCell);
+            tbody.appendChild(tr);
+        });
+    </script>
+</body>
+</html>
