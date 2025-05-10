@@ -42,15 +42,41 @@
                 font-size: 1.8rem;
             }
         }
+        /* 検索ボックスのスタイル */
+        .search-box {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-box button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #4E4FEB;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .search-box button:hover {
+            background-color: #3b3bb5;
+        }
     </style>
 </head>
 <body>
     <h1>製品情報</h1>
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="製品名やメーカー名で検索...">
+        <button id="search-button">検索</button>
+    </div>
     <table>
         <thead>
             <tr>
                 <th>製品名</th>
-                
             </tr>
         </thead>
         <tbody>
@@ -246,23 +272,56 @@ KCL補正液1mEq/mL,大塚製薬工場,https://www.otsukakj.jp/med_nutrition/dik
         const rows = data.split('\n').slice(1); // ヘッダーを除外
         const tbody = document.querySelector('tbody');
 
-        rows.forEach(row => {
+        const sortedData = rows.map(row => {
             const [productName, manufacturer, url] = row.split(',');
-            const tr = document.createElement('tr');
-
-            const productCell = document.createElement('td');
-            const productLink = document.createElement('a');
-            productLink.href = url;
-            productLink.textContent = productName;
-            productCell.appendChild(productLink);
-
-            const manufacturerDiv = document.createElement('div');
-            manufacturerDiv.textContent = manufacturer;
-            productCell.appendChild(manufacturerDiv);
-
-            tr.appendChild(productCell);
-            tbody.appendChild(tr);
+            return { productName, manufacturer, url };
         });
+
+        function renderTable(data) {
+            tbody.innerHTML = '';
+            data.forEach(item => {
+                const tr = document.createElement('tr');
+
+                const productCell = document.createElement('td');
+                const productLink = document.createElement('a');
+                productLink.href = item.url;
+                productLink.textContent = item.productName;
+                productCell.appendChild(productLink);
+
+                const manufacturerDiv = document.createElement('div');
+                manufacturerDiv.textContent = item.manufacturer;
+                productCell.appendChild(manufacturerDiv);
+
+                tr.appendChild(productCell);
+                tbody.appendChild(tr);
+            });
+        }
+
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+
+        function filterBySearch(keyword) {
+            const lowerKeyword = keyword.toLowerCase();
+            return sortedData.filter(item => {
+                return item.productName.toLowerCase().includes(lowerKeyword) ||
+                       item.manufacturer.toLowerCase().includes(lowerKeyword);
+            });
+        }
+
+        searchButton.addEventListener('click', () => {
+            const keyword = searchInput.value;
+            const filteredData = filterBySearch(keyword);
+            renderTable(filteredData);
+        });
+
+        searchInput.addEventListener('input', () => {
+            const keyword = searchInput.value;
+            const filteredData = filterBySearch(keyword);
+            renderTable(filteredData);
+        });
+
+        // 初期表示
+        renderTable(sortedData);
     </script>
 </body>
 </html>
