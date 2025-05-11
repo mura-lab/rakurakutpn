@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>輸液成分の計算式</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1rem; /* 余白を減らしました */
+      line-height: 1.5; /* 行間を詰めました */
+      background-color: #fefefe;
+    }
+    h1 {
+        font-size: 2.4rem;
+        color: #4E4FEB;
+        border-bottom: 3px solid #4E4FEB;
+        padding-bottom: 0.5rem;
+        margin-bottom: 2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+        color: #4E4FEB;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+    .formula {
+      background: #f6f8fa;
+      padding: 1em;
+      border-left: 4px solid #4e4feb;
+      margin: 1.5em 0;
+      text-align: left; /* 数式の左端を揃える設定を追加 */
+    }
+    @media (max-width: 600px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+        h2 {
+          font-size: 1.4rem;
+        }
+      }
+  </style>
+</head>
+<body>
+  <h1>輸液成分の計算式一覧</h1>
+  <h2>計算式概要</h2>
+  <p>計算式は、参考文献に基づいて下記前提条件で行っています。</p>
+  <ul>
+    <li>糖は1gあたり4kcalとして計算しています。</li>
+    <li>脂肪は1gあたり9kcalとして計算しています。</li>
+    <li>NPC/N比は非蛋白性熱量を窒素含有量で割った値であり、窒素はタンパク質6.25gに1g含まれていると概算しています。</li>
+    <li>輸液時間が24時間未満の場合でも、24時間投与したと仮定して計算しています。</li>
+  </ul>
+  <h2>参考文献</h2>
+  <ul>
+    <li>真島 吉也. 適正投与量の決め方—カロリー，糖，アミノ酸，脂肪. medicina. 1991; 28(6): 982-985.</li>
+    <li>外岡 亨, 鍋谷 圭宏. (Part 2)静脈経腸栄養のコツとピットフォール　非タンパク熱量/窒素(NPC/N)比の設定とアミノ酸輸液製剤. 臨床栄養. 2022; 141(4); 491-497.</li>
+    
+  </ul>
+
+  <h2>計算式一覧</h2>
+  <table border="1" style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>数式</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>作成輸液総量 (mL)</td>
+        <td>$$ \text{作成輸液総量 (mL)} = \text{全輸液の総和 (mL)} $$</td>
+      </tr>
+      <tr>
+        <td>輸液時間 (時間)</td>
+        <td>$$ \text{輸液時間 (時間)} = \frac{\text{作成輸液総量 (mL)}}{\text{輸液速度 (mL/h)}} $$</td>
+      </tr>
+      <tr>
+        <td>水分率 (mL/kg/day)</td>
+        <td>$$ \text{水分率 (mL/kg/day)} = \frac{\text{輸液速度 (mL/h)} \times 24}{\text{体重 (kg)}} $$</td>
+      </tr>
+      <tr>
+        <td>総輸液量 (mL/day)</td>
+        <td>$$ \text{総輸液量 (mL/day)} = \text{輸液速度 (mL/h)} \times 24 $$</td>
+      </tr>
+      <tr>
+        <td>総カロリー (kcal/day)</td>
+        <td>$$ \text{総カロリー (kcal/day)} = \text{糖熱量(kcal/day)} + \text{脂肪熱量(kcal/day)} + \text{アミノ酸熱量(kcal/day)} $$</td>
+      </tr>
+      <tr>
+        <td>カロリー (kcal/kg/day)</td>
+        <td>$$ \text{カロリー (kcal/kg/day)} = \frac{\text{総カロリー(kcal/day)}}{\text{体重 (kg)}} $$</td>
+      </tr>
+      <tr>
+        <td>非蛋白性熱量 (kcal/day)</td>
+        <td>$$ \text{非蛋白性熱量 (kcal/day)} = \text{糖熱量(kcal/day)} + \text{脂肪熱量(kcal/day)} $$</td>
+      </tr>
+      <tr>
+        <td>NPC/N比</td>
+        <td>$$ \text{NPC/N比} = \frac{\text{非蛋白性熱量(kcal/day)}}{\text{窒素総量 (g)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right)} $$</td>
+      </tr>
+      <tr>
+        <td>糖熱量 (kcal/day)</td>
+        <td>$$ \text{糖熱量 (kcal/day)} = \text{糖量 (g/day)} \times 4 $$</td>
+      </tr>
+      <tr>
+        <td>脂肪熱量 (kcal/day)</td>
+        <td>$$ \text{脂肪熱量 (kcal/day)} = \text{脂肪量 (g/day)} \times 9 $$</td>
+      </tr>
+      <tr>
+        <td>アミノ酸熱量 (kcal/day)</td>
+        <td>$$ \text{アミノ酸熱量 (kcal/day)} = \text{アミノ酸量 (g/day)} \times 4 $$</td>
+      </tr>
+      <tr>
+        <td>糖量 (g/day)</td>
+        <td>$$ \text{糖量 (g/day)} = \text{糖総量 (g)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>脂肪量 (g/day)</td>
+        <td>$$ \text{脂肪量 (g/day)} = \text{脂肪総量 (g)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>アミノ酸量 (g/day)</td>
+        <td>$$ \text{アミノ酸量 (g/day)} = \text{アミノ酸総量 (g)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>糖度 (%)</td>
+        <td>$$ \text{糖度 (%)} = \frac{\text{糖量 (g/day)} \times 100}{\text{総輸液量 (mL/day)}} $$</td>
+      </tr>
+      <tr>
+        <td>GIR (mg/kg/min)</td>
+        <td>$$ \text{GIR (mg/kg/min)} = \frac{\text{糖量 (g/day)} \times 1000}{\text{体重 (kg)} \times 1440} $$</td>
+      </tr>
+      <tr>
+        <td>Na<sup>+</sup> (mEq/L)</td>
+        <td>$$ \text{Na}^{+} \text{ (mEq/L)} = \frac{\text{成分総和 (mEq)} \times 1000}{\text{作成輸液総量 (mL)}} $$</td>
+      </tr>
+      <tr>
+        <td>Na<sup>+</sup> (mEq/kg/day)</td>
+        <td>$$ \text{Na}^{+} \text{ (mEq/kg/day)} = \frac{\text{成分総和 (mEq)}}{\text{体重 (kg)}} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>K<sup>+</sup> (mEq/L)</td>
+        <td>$$ \text{K}^{+} \text{ (mEq/L)} = \frac{\text{成分総和 (mEq)} \times 1000}{\text{作成輸液総量 (mL)}} $$</td>
+      </tr>
+      <tr>
+        <td>K<sup>+</sup> (mEq/kg/day)</td>
+        <td>$$ \text{K}^{+} \text{ (mEq/kg/day)}= \frac{\text{成分総和 (mEq)}}{\text{体重 (kg)}} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Ca<sup>2+</sup> (mEq/day)</td>
+        <td>$$ \text{Ca}^{2+} \text{ (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Ca<sup>2+</sup> (mg/day)</td>
+        <td>$$ \text{Ca}^{2+} \text{ (mg/day)} = \text{Ca (mEq/day)} \times 40 $$</td>
+      </tr>
+      <tr>
+        <td>Mg<sup>2+</sup> (mEq/day)</td>
+        <td>$$ \text{Mg}^{2+} \text{ (mEq/day)}  = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Mg<sup>2+</sup> (mg/day)</td>
+        <td>$$ \text{Mg}^{2+} \text{ (mg/day)} = \text{Mg (mEq/day)} \times 12 $$</td>
+      </tr>
+      <tr>
+        <td>Cl<sup>-</sup> (mEq/day)</td>
+        <td>$$ \text{Cl}^{-} \text{ (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Lactate (mEq/day)</td>
+        <td>$$ \text{Lactate (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Acetate (mEq/day)</td>
+        <td>$$ \text{Acetate (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Gluconate (mEq/day)</td>
+        <td>$$ \text{Glucon (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>SO<sub>4</sub><sup>2-</sup> (mEq/day)</td>
+        <td>$$ \mathrm{SO_4^2-} \text{ (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Citrate (mEq/day)</td>
+        <td>$$ \text{Citrate (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Succinate (mEq/day)</td>
+        <td>$$ \text{Succinate (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>P (mmol/day)</td>
+        <td>$$ \text{P (mmol/day)} = \text{成分総和 (mmol)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>Zn (μmol/day)</td>
+        <td>$$ \text{Zn (μmol/day)} = \text{成分総和 (μmol)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      <tr>
+        <td>HCO<sub>3</sub><sup>-</sup> (mEq/day)</td>
+        <td>$$ \mathrm{HCO_3^-} \text{ (mEq/day)} = \text{成分総和 (mEq)} \times \left( \frac{\text{輸液速度 (mL/h)} \times 24}{\text{作成輸液総量 (mL)}} \right) $$</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</body>
+</html>
